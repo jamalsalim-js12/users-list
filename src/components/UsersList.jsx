@@ -14,7 +14,8 @@ const UsersList = ({ users, editUser, deleteUser }) => {
           <th>Email</th>
           <th>Username</th>
           <th>Website</th>
-          <th>Action</th>
+          <th>Update</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -25,7 +26,9 @@ const UsersList = ({ users, editUser, deleteUser }) => {
             <td>{user.username}</td>
             <td>{user.website}</td>
             <td className="button-actions">
-              <button onClick={handleEdit}>Edit</button>
+              <button onClick={handleEdit}>Update</button>
+            </td>
+            <td className="button-actions">
               <button onClick={handleDelete}>Delete</button>
             </td>
           </tr>

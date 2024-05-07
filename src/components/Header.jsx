@@ -1,5 +1,12 @@
+import SearchBar from "./SearchBar";
+
 const Header = () => {
-  return <h1 className="heading">User List</h1>;
+  return (
+    <header className="header">
+      <SearchBar />
+      <button className="add">Add New User</button>
+    </header>
+  );
 };
 
 export default Header;

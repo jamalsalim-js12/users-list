@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import UsersList from "./UsersList";
+import Header from "./Header";
 
 const ListContainer = () => {
   const [users, setUsers] = useState([]);
@@ -17,6 +18,7 @@ const ListContainer = () => {
   }, []);
   return (
     <main>
+      <Header />
       <UsersList users={users} />
     </main>
   );

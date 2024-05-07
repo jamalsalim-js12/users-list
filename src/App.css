@@ -1,5 +1,5 @@
 * {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
 }
@@ -15,8 +15,6 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
 }
 
 .heading {
@@ -33,25 +31,20 @@ main {
 }
 
 table {
-    width: 80%;
+    width: 90%;
     border-collapse: collapse;
-
 }
 
 th,
 td {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 10px 0;
     text-align: center;
 }
 
 th {
     background-color: #f2f2f2;
 }
-
-/* td {
-    text-align: center;
-} */
 
 .button-actions button {
     background-color: #4caf50;
@@ -61,4 +54,43 @@ th {
     margin: 0 10px 0 0;
     border: none;
     cursor: pointer;
+    border-radius: 0.4rem;
+}
+
+.button-actions button:hover {
+    background-color: #45a049;
+}
+
+input[type='text'] {
+    width: 66%;
+    height: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 8px 15px;
+}
+
+input[type='text']::placeholder {
+    font-size: 16px;
+}
+
+.header {
+    width: 100%;
+    /* background-color: blue; */
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 7%;
+    margin-bottom: 1rem;
+}
+
+.add {
+    background-color: #4caf50;
+    width: 7%;
+    height: 100%;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.7rem;
+    font-size: 16px;
 }

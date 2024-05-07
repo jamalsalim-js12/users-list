@@ -1,10 +1,10 @@
-import Header from "./components/Header";
+import HeadingText from "./components/HeadingText";
 import ListContainer from "./components/ListContainer";
 
 const App = () => {
   return (
     <div className="App">
-      <Header />
+      <HeadingText />
       <ListContainer />
     </div>
   );
