@@ -1,7 +1,7 @@
 // UserForm.js
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const UserForm = ({ user, closeModal }) => {
+const Form = ({ user, closeModal, setUsers, users }) => {
   const initialUser = user || {
     name: "",
     email: "",
@@ -9,6 +9,12 @@ const UserForm = ({ user, closeModal }) => {
   };
 
   const [formData, setFormData] = useState(initialUser);
+
+  useEffect(() => {
+    if (user) {
+      setFormData(user);
+    }
+  }, [user]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -20,8 +26,17 @@ const UserForm = ({ user, closeModal }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add logic here to handle form submission, e.g., sending data to the server
-    closeModal(); // Close the modal after submission
+
+    if (user) {
+      const updatedUsers = users.map((u) =>
+        u.id === formData.id ? formData : u
+      );
+      setUsers(updatedUsers);
+    } else {
+      setUsers((prevUsers) => [...prevUsers, formData]);
+    }
+
+    closeModal();
   };
 
   return (
@@ -52,4 +67,4 @@ const UserForm = ({ user, closeModal }) => {
   );
 };
 
-export default UserForm;
+export default Form;

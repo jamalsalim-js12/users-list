@@ -10,35 +10,32 @@ body {
     height: 100vh;
 }
 
-.App {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
 
 .heading {
     text-align: center;
     margin: 2rem 0;
 }
 
-main {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.App {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
 }
 
 table {
-    width: 90%;
+    width: 100%;
     border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
 th,
 td {
     border: 1px solid #ddd;
-    padding: 10px 0;
+    padding: 8px;
     text-align: center;
 }
 
@@ -46,51 +43,63 @@ th {
     background-color: #f2f2f2;
 }
 
-.button-actions button {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    margin: 0 10px 0 0;
-    border: none;
-    cursor: pointer;
-    border-radius: 0.4rem;
-}
-
-.button-actions button:hover {
-    background-color: #45a049;
-}
-
 input[type='text'] {
-    width: 66%;
-    height: 100%;
-    font-size: 16px;
-    margin-bottom: 10px;
+    width: 100%;
     padding: 8px 15px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
 input[type='text']::placeholder {
     font-size: 16px;
 }
 
-.header {
-    width: 100%;
-    /* background-color: blue; */
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    gap: 7%;
-    margin-bottom: 1rem;
-}
-
-.add {
+button {
     background-color: #4caf50;
-    width: 7%;
-    height: 100%;
     color: white;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
-    border-radius: 0.7rem;
-    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

@@ -1,11 +1,4 @@
-const UsersList = ({ users, editUser, deleteUser }) => {
-  const handleEdit = (user) => {
-    editUser(user);
-  };
-
-  const handleDelete = (user) => {
-    deleteUser(user.id);
-  };
+const UsersList = ({ users, openEditUserModal, deleteUser }) => {
   return (
     <table>
       <thead>
@@ -19,17 +12,17 @@ const UsersList = ({ users, editUser, deleteUser }) => {
         </tr>
       </thead>
       <tbody>
-        {users.map((user) => (
-          <tr key={user.id}>
+        {users.map((user, index) => (
+          <tr key={index}>
             <td>{user.name}</td>
             <td>{user.email}</td>
             <td>{user.username}</td>
             <td>{user.website}</td>
             <td className="button-actions">
-              <button onClick={handleEdit}>Update</button>
+              <button onClick={() => openEditUserModal(user)}>Edit</button>
             </td>
             <td className="button-actions">
-              <button onClick={handleDelete}>Delete</button>
+              <button onClick={() => deleteUser(user.id)}>Delete</button>
             </td>
           </tr>
         ))}
