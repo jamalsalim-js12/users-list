@@ -6,6 +6,7 @@ const Form = ({ user, closeModal, setUsers, users }) => {
     name: "",
     email: "",
     username: "",
+    website: "",
   };
 
   const [formData, setFormData] = useState(initialUser);
@@ -61,6 +62,14 @@ const Form = ({ user, closeModal, setUsers, users }) => {
         value={formData.username}
         onChange={handleInputChange}
         placeholder="Username"
+      />
+
+      <input
+        type="text"
+        name="website"
+        value={formData.website}
+        onChange={handleInputChange}
+        placeholder="Website"
       />
       <button type="submit">Submit</button>
     </form>
